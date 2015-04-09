@@ -1,8 +1,9 @@
 <resources>
 
-    <string name="app_name" translatable="false">HelloWorldKasper</string>
+    <string name="app_name" translatable="false">HW201206094</string>
+    <string name="main_title" translatable="false">Hello World Kasper</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="text_standard">This is the standard, boring, text</string>
     <string name="button_text">Click me</string>
     <string name="text_part_one">You have clicked this button</string>
     <string name="text_part_two">times</string>

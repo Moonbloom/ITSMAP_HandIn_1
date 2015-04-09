@@ -1,7 +1,7 @@
 package com.moon.kasper.hi1201206094;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     private int counter = 0;
 
@@ -24,7 +24,7 @@ public class MainActivity extends ActionBarActivity {
         counter++;
         String text = getResources().getString(R.string.text_part_one) + " " + counter + " " + getResources().getString(R.string.text_part_two);
 
-        Boast.makeText(this, text, Boast.Level.Message);
+        Boast.makeText(this, text, Boast.Level.Info);
         textView.setText(text);
     }
 
@@ -36,5 +36,9 @@ public class MainActivity extends ActionBarActivity {
 
         //Inject views and listeners to avoid boilerplate code
         ButterKnife.inject(this);
+
+        if(getActionBar() != null) {
+            getActionBar().setTitle(getResources().getString(R.string.main_title));
+        }
     }
 }
