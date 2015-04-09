@@ -2,8 +2,6 @@ package com.moon.kasper.hi1201206094;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -36,26 +34,7 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.main_activity);
 
-        //Inject views to avoid boilerplate code with loads of findViewById
+        //Inject views and listeners to avoid boilerplate code
         ButterKnife.inject(this);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        switch(id) {
-            case R.id.action_settings:
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

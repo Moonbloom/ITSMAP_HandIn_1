@@ -3,9 +3,8 @@
     <string name="app_name" translatable="false">HelloWorldKasper</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="button_text">Click me</string>
-    <string name="text_part_one">You have clicked this button </string>
+    <string name="text_part_one">You have clicked this button</string>
     <string name="text_part_two">times</string>
 
 </resources>
