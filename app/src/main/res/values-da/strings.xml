@@ -4,4 +4,5 @@
     <string name="button_text">Tryk på mig</string>
     <string name="text_part_one">Du har klikket på denne knap</string>
     <string name="text_part_two">gange</string>
+    <string name="secret_level_unlocked">Du har oplåst det hemmelige niveau !</string>
 </resources>

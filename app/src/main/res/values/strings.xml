@@ -7,5 +7,6 @@
     <string name="button_text">Click me</string>
     <string name="text_part_one">You have clicked this button</string>
     <string name="text_part_two">times</string>
+    <string name="secret_level_unlocked">You\'ve unlocked the secret level !</string>
 
 </resources>

@@ -2,8 +2,10 @@ package com.moon.kasper.hi1201206094;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.moon.kasper.hi1201206094.utilities.Boast;
@@ -18,14 +20,26 @@ public class MainActivity extends Activity {
 
     @InjectView(R.id.main_activity_textview) TextView textView;
     @InjectView(R.id.main_activity_button) Button button;
+    @InjectView(R.id.secret_level_imageview) ImageView imageView;
 
     @OnClick(R.id.main_activity_button)
     public void buttonClick(View view) {
         counter++;
-        String text = getResources().getString(R.string.text_part_one) + " " + counter + " " + getResources().getString(R.string.text_part_two);
+        String text = "";
 
-        Boast.makeText(this, text, Boast.Level.Info);
-        textView.setText(text);
+        if(counter < 10) {
+            text = getResources().getString(R.string.text_part_one) + " " + counter + " " + getResources().getString(R.string.text_part_two);
+        }
+
+        if(counter == 10) {
+            text = getResources().getString(R.string.secret_level_unlocked);
+            imageView.setVisibility(View.VISIBLE);
+        }
+
+        if(!TextUtils.isEmpty(text)) {
+            Boast.makeText(this, text, Boast.Level.Info);
+            textView.setText(text);
+        }
     }
 
     @Override

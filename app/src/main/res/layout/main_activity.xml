@@ -25,4 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"/>
 
+    <ImageView
+        android:id="@+id/secret_level_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/cat"
+        android:visibility="gone"/>
+
 </RelativeLayout>
