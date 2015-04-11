@@ -1,12 +1,15 @@
 <resources>
 
-    <string name="app_name" translatable="false">HW201206094</string>
-    <string name="main_title" translatable="false">Hello World Kasper</string>
+    <string name="app_name">HW201206094</string>
+
+    <string name="main_title">Hello World Kasper</string>
 
     <string name="text_standard">This is the standard, boring, text</string>
     <string name="button_text">Click me</string>
     <string name="text_part_one">You have clicked this button</string>
     <string name="text_part_two">times</string>
-    <string name="secret_level_unlocked">You\'ve unlocked the secret level !</string>
+
+    <string name="secret_level_one_unlocked">You\'ve unlocked the first secret level!</string>
+    <string name="secret_level_two_unlocked">You\'ve unlocked the second secret level!</string>
 
 </resources>

@@ -21,8 +21,6 @@
         <item name="android:titleTextStyle">@style/ActionBarTitleText</item>
         <item name="android:subtitleTextStyle">@style/ActionBarSubtitleText</item>
         <item name="android:windowContentOverlay">@null</item>
-
-        <item name="android:icon">@android:color/transparent</item>
     </style>
     
     <!-- ActionBar title text -->

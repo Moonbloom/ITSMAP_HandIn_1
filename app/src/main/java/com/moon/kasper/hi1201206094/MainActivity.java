@@ -27,12 +27,20 @@ public class MainActivity extends Activity {
         counter++;
         String text = "";
 
-        if(counter < 10) {
-            text = getResources().getString(R.string.text_part_one) + " " + counter + " " + getResources().getString(R.string.text_part_two);
+        if(counter < 5 || (counter > 5 && counter < 10)) {
+            text = getString(R.string.text_part_one) + " " + counter + " " + getString(R.string.text_part_two);
+            imageView.setVisibility(View.GONE);
+        }
+
+        if(counter == 5) {
+            text = getString(R.string.secret_level_one_unlocked);
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.android));
+            imageView.setVisibility(View.VISIBLE);
         }
 
         if(counter == 10) {
-            text = getResources().getString(R.string.secret_level_unlocked);
+            text = getString(R.string.secret_level_two_unlocked);
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.android_eating_apple));
             imageView.setVisibility(View.VISIBLE);
         }
 
@@ -52,7 +60,7 @@ public class MainActivity extends Activity {
         ButterKnife.inject(this);
 
         if(getActionBar() != null) {
-            getActionBar().setTitle(getResources().getString(R.string.main_title));
+            getActionBar().setTitle(getString(R.string.main_title));
         }
     }
 }
