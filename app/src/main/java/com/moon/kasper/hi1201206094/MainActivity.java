@@ -16,6 +16,8 @@ import butterknife.OnClick;
 
 public class MainActivity extends Activity {
 
+    private String stateTag = "itsmap_handin1_counter";
+
     private int counter = 0;
 
     @InjectView(R.id.main_activity_textview) TextView textView;
@@ -23,8 +25,40 @@ public class MainActivity extends Activity {
     @InjectView(R.id.secret_level_imageview) ImageView imageView;
 
     @OnClick(R.id.main_activity_button)
-    public void buttonClick(View view) {
+    public void buttonClick() {
         counter++;
+        setCorrectShownState(true);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.main_activity);
+
+        //Inject views and listeners to avoid boilerplate code
+        ButterKnife.inject(this);
+
+        if(getActionBar() != null) {
+            getActionBar().setTitle(getString(R.string.main_title));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(stateTag, counter);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        counter = savedInstanceState.getInt(stateTag);
+
+        setCorrectShownState(false);
+    }
+
+    private void setCorrectShownState(boolean showToast) {
         String text = "";
 
         if(counter < 5 || (counter > 5 && counter < 10)) {
@@ -45,22 +79,11 @@ public class MainActivity extends Activity {
         }
 
         if(!TextUtils.isEmpty(text)) {
-            Boast.makeText(this, text, Boast.Level.Info);
+            if(showToast) {
+                Boast.makeText(this, text, Boast.Level.Info);
+            }
+
             textView.setText(text);
-        }
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.main_activity);
-
-        //Inject views and listeners to avoid boilerplate code
-        ButterKnife.inject(this);
-
-        if(getActionBar() != null) {
-            getActionBar().setTitle(getString(R.string.main_title));
         }
     }
 }
