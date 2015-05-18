@@ -8,7 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.moon.kasper.hi1201206094.utilities.Boast;
+import com.moonbloom.boast.BStyle;
+import com.moonbloom.boast.Boast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -80,7 +81,7 @@ public class MainActivity extends Activity {
 
         if(!TextUtils.isEmpty(text)) {
             if(showToast) {
-                Boast.makeText(this, text, Boast.Level.Info);
+                Boast.makeText(this, text, BStyle.INFO);
             }
 
             textView.setText(text);

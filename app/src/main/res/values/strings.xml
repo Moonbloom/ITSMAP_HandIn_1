@@ -1,6 +1,7 @@
 <resources>
 
-    <string name="app_name">HW201206094</string>
+    <string name="app_name">ITSMAP HandIn 1</string>
+    <!--<string name="app_name">HW201206094</string>-->
 
     <string name="main_title">Hello World Kasper</string>
 
